@@ -2,7 +2,7 @@ import { ethers } from 'ethers';
 import logger from '../logger';
 import { sendErrorMessage } from './telegram.service';
 
-const DIFFERENCE_THRESHOLD = 15;
+const DIFFERENCE_THRESHOLD = +(process.env.DIFFERENCE_THRESHOLD || 70);
 
 export async function isEqualsRpcState(firstRpc: string, secondRpc: string) {
   try {
